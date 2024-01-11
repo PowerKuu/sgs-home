@@ -92,7 +92,7 @@
 
 .water-wrapper {
     position: relative;
-    top: 50vh;
+    top: 30rem;
 }
 
 .white {

@@ -8,7 +8,17 @@
 			<SystemLogo/>
 		</template>
 
+		<template #right>
+			<SystemFlex class="desktop" align="center" gap="1.5rem">
+				<NavItems></NavItems>
+			</SystemFlex>
 
+			<SystemFlex class="mobile">
+				<SystemHamburger class="mobile">
+					<NavItems></NavItems>
+				</SystemHamburger>
+			</SystemFlex>	
+		</template>
 	</SystemTopnav>
 	
 	
@@ -18,6 +28,22 @@
 		</SystemFlex>
 	</NuxtLayout>
 </template>
+
+<style scoped lang="scss">
+.mobile {
+	display: none !important;
+}
+
+@media screen and (max-width: 800px) {
+	.desktop {
+		display: none !important;
+	}
+
+	.mobile {
+		display: flex !important;
+	}
+}
+</style>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600&display=swap");
@@ -60,5 +86,9 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+a {
+	text-decoration: none;
 }
 </style>

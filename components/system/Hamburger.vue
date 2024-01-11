@@ -7,8 +7,12 @@ const showMenu = ref(false)
 
     <SystemOverlay @click="showMenu = false" v-if="showMenu"></SystemOverlay>
 
-    <SystemFlex v-if="showMenu" class="hamburger-menu" gap="1rem" direction="column">
-        <slot></slot>
+    <SystemFlex v-if="showMenu" class="hamburger-menu" gap="1.5rem" direction="column">
+        <Icon @click="showMenu = !showMenu" color="var(--text)" name="akar-icons:cross" class="cross"></Icon>
+        
+        <SystemFlex gap="1rem" direction="column">
+            <slot></slot>
+        </SystemFlex>
     </SystemFlex>
 </template>
 
@@ -23,12 +27,18 @@ const showMenu = ref(false)
     position: fixed;
     top: 0;
     left: 0;
-    width: max(40vw, 10rem);
+    width: max(40vw, 500px);
     height: 100%;
 
     padding: 5rem var(--page-padding);
 
     background: var(--background);
     backdrop-filter: blur(5px);
+}
+
+.cross {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
 }
 </style>
